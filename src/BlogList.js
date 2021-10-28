@@ -1,9 +1,4 @@
-const BlogList = ({blogs, title}) => {
-
-  // Having blogs and title above is the same as below and passing 'props' above
-  
-  // const blogs = props.blogs
-  // const title = props.title
+const BlogList = ({blogs, title, handleDelete}) => {
 
 
   return (
@@ -13,6 +8,7 @@ const BlogList = ({blogs, title}) => {
         <div className="blog-preview" key={blog.id}>
           <h2>{blog.title}</h2>
           <p>Written by {blog.author}</p>
+          <button style={{color: 'black'}} onClick={() => handleDelete(blog.id)}>Delete Blog</button>
         </div>
       ))}
     </div>
