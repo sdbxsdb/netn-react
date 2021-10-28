@@ -1,19 +1,22 @@
+import { useState } from "react";
+
 const Home = () => {
 
-  const handleClick = (e) => {
-    console.log('HELLOOOOO', e);
+  // let name = 'Jimmy'
+  const [name, setName] = useState("Jimmy")
+  const [age, setAge] = useState(25)
+
+  const handleClick = () => {
+    setName("Bob");
+    setAge(30);
   }
 
-  const handleClickAgain = (name, e) => {
-    console.log('XXXXX -', name + e.target);
-  }
 
   return ( 
     <div className="home">
       <h2>Homepage</h2>
+      <p>{ name } is { age } years old</p>
       <button style={{ color: "black" }} onClick={handleClick}>Click Me</button>
-      {/* Use the below method to call a function with a vaiable inside it, basically putting a function inside a function */}
-      <button style={{ color: "black" }} onClick={(e) => handleClickAgain('Jimmy', e)}>Click me again</button>
     </div>
   );
 }
