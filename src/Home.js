@@ -3,30 +3,23 @@ import BlogList from './BlogList';
 
 const Home = () => {
 
-  const [blogs, setBlogs] = useState([
-    { title: 'My new website', body: 'lorem ipsum...', author: 'mario', id: 1 },
-    { title: 'Welcome party!', body: 'lorem ipsum...', author: 'yoshi', id: 2 },
-    { title: 'Web dev top tips', body: 'lorem ipsum...', author: 'mario', id: 3 }
-  ]);
+  const [blogs, setBlogs] = useState(null);
 
-   const [name, setName] = useState('Mario');
-
-
-  const handleDelete = (id) => {
-    const newBlogs = blogs.filter(blog => blog.id !== id);
-    setBlogs(newBlogs);
-  }
 
   useEffect(() => {
-    console.log('use effect ran');
-    console.log(name);
-  }, [name]);
+    fetch('http://localhost:8000/blogs')
+      .then(res => {
+        return res.json()
+      })
+      .then((data) => {
+        setBlogs(data);
+      });
+  }, []);
 
   return ( 
     <div className="home">
-      <BlogList blogs={blogs} title={"All Blogs!"} handleDelete={handleDelete} />
-      <button style={{ color: 'black' }} onClick={() => setName("Mary")}>Change Name</button>
-      <p>{name}</p>
+      {/* If blogs is null (false) it won't get past the && and wont do the next part - if there is data in the blogs it will move to the next step after the && and output the blogs without throwing and error */}
+      { blogs && <BlogList blogs={blogs} title={"All Blogs!"} /> }
     </div>
   );
 }
