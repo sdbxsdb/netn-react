@@ -1,10 +1,13 @@
 
 import Navbar from './Navbar';
 import Home from './Home';
-import Create from './Create';
+// import Create from './Create';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import BlogDetails from './BlogDetails';
+// import BlogDetails from './BlogDetails';
 import PageNotFound from './PageNotFound';
+import Contact from './Contact';
+import Portfolio from './Portfolio';
+import About from './About';
 
 function App() {
 
@@ -18,11 +21,20 @@ function App() {
             <Route exact path="/">
               <Home />
             </Route>
-            <Route path="/create">
+            {/* <Route path="/create">
               <Create />
-            </Route>
-            <Route path="/blogs/:id">
+            </Route> */}
+            {/* <Route path="/blogs/:id">
               <BlogDetails />
+            </Route> */}
+            <Route path="/about">
+              <About />
+            </Route>
+            <Route path="/contact">
+              <Contact />
+            </Route>
+            <Route path="/portfolio">
+              <Portfolio />
             </Route>
             <Route path="*">
               <PageNotFound />
