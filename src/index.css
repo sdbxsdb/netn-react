@@ -94,7 +94,8 @@ body {
   resize: vertical;
   color: #191919
 }
-.create button {
+
+.blog-details button {
   background: #f1356d;
   color: #fff;
   border: 0;
