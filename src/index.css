@@ -67,4 +67,15 @@ body {
 }
 .blog-details div {
   margin: 20px 0;
+<<<<<<< HEAD
+=======
+}
+.blog-details button {
+  background: #f1356d;
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+>>>>>>> dec03ee6231939b338b61ba3de164dcf35fa1b66
 }

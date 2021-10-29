@@ -12,7 +12,10 @@ const useFetch = (url) => {
 
     const abortCont = new AbortController();
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> dec03ee6231939b338b61ba3de164dcf35fa1b66
       fetch(url, { signal: abortCont.signal })
         .then(res => {
           if (!res.ok) {
