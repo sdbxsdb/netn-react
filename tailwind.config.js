@@ -13,9 +13,6 @@ module.exports = {
           '10xl': '16.25rem',      //  260px
       },
 
-
-      
-      
     
       lineHeight: {    
         '3.5' : '0.875rem',      // 14 - used on btns     
@@ -121,6 +118,7 @@ module.exports = {
       borderRadius: ['hover', 'group-hover'],
       transform: ['hover', 'group-hover'],
       transitionProperty: ['hover', 'group-hover'],
+      translate: ['hover', 'group-hover'],
     },
   },
   plugins: [],
